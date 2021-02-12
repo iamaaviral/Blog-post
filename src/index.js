@@ -3,10 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from 'react-router-dom';
+import {BlogContext, Context } from './Context/Context';
+
+const Blog = () => (
+  <Router>
+    <BlogContext>
+      <Context.Consumer>{val => <App {...val} />}</Context.Consumer>
+    </BlogContext>
+  </Router>
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Blog />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 const Context = React.createContext('blog');
 
@@ -22,6 +23,8 @@ class BlogContext extends React.Component {
         );
     }
 }
+
+const BlogContextWithRouter = withRouter(BlogContext);
 const ContextHOC = (SomeComponent, props) => {
     return (
         <Context.Consumer>
@@ -32,6 +35,6 @@ const ContextHOC = (SomeComponent, props) => {
 
 export {
     Context,
-    BlogContext,
+    BlogContextWithRouter as BlogContext,
     ContextHOC,
 };

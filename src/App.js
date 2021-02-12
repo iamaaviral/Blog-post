@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+import { ContextHOC } from './Context/Context';
 import './App.css';
 import Home from './containers/Home';
+import Posts from './containers/Posts'
+
 
 function App(props) {
   React.useEffect(() => {
@@ -13,7 +17,16 @@ function App(props) {
 
   return (
     <div className="App">
-      <Home />
+      <Route
+        exact
+        path="/"
+        render={() => ContextHOC(Home)}
+      />
+      <Route
+        exact
+        path="/app/Posts"
+        render={() => ContextHOC(Posts)}
+      />
     </div>
   );
 }

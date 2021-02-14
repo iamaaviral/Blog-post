@@ -15,14 +15,14 @@ const Posts = props => {
             if (search.includes(props.searchTerm.toUpperCase())) 
                 {
                 return (
-                    <div className="each-posts-wrapper hoverable"
+                    <div className="each-post-wrapper hoverable"
                         key={post.id}
                     >
-                        <div>{post.title}</div>
-                        <div onClick={(e) => {
+                        <div className="post-title">{post.title}</div>
+                        <div className="view-btn" onClick={(e) => {
                             props.setSelectedPostId(post.id)
                             props.history.push('/app/PostDetails')
-                        }}>view description</div>
+                        }}>Read this post</div>
                     </div>)
                 }
             })}

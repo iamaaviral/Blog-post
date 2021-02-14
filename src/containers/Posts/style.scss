@@ -1,8 +1,24 @@
 .posts-container {
-    border: 1px solid red;
-    .each-posts-wrapper {
+    max-width: 70%;
+    margin: 0 auto;
+    .each-post-wrapper {
         display: flex;
         justify-content: space-between;
-        border: 1px solid green;
+        align-items: center;
+        padding: 24px 0 34px 0 ;
+        border-top: 1px solid rgb(143, 142, 142);
+        border-bottom: 1px solid rgb(143, 142, 142);
+            .post-title {
+                flex-basis: 80%;
+                font-size: 23px;
+            }
+        .view-btn {
+            font-weight: 400;
+            font-size: 16px;
+            border-radius: 4px;
+            padding: 7px 16px 9px;
+            background: rgb(15, 115, 12) none repeat scroll 0% 0%;
+            color: white;
+        }
     }
 }

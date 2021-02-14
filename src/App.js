@@ -21,6 +21,7 @@ function App(props) {
     <div className="App">
       <Header setSearchTerm={props.setSearchTerm}/>
       <div className="body">
+        <div className="body-content">
       <Route
         exact
         path="/"
@@ -36,6 +37,7 @@ function App(props) {
         path="/app/PostDetails"
         render={() => ContextHOC(PostDetails)}
       />
+        </div>
       </div>
     </div>
   );

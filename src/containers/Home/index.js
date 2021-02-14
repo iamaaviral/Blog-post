@@ -20,7 +20,7 @@ const Home = props => {
                             <div className="user-company">{user.company.name}</div>
                         </div>
                         <div title="view blog posts"
-                         className="view-blog hoverable"
+                         className="view-btn hoverable"
                             onClick={(e) => {
                             props.setSelectedUserId(user.id)
                             props.history.push('/app/Posts')

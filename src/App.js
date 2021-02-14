@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import { ContextHOC } from './Context/Context';
 import './App.css';
 import Home from './containers/Home';
 import Posts from './containers/Posts'
+import PostDetails from './containers/PostDetails';
+import Header from './components/Header/Header';
 
 
 function App(props) {
@@ -17,6 +19,8 @@ function App(props) {
 
   return (
     <div className="App">
+      <Header setSearchTerm={props.setSearchTerm}/>
+      <div className="body">
       <Route
         exact
         path="/"
@@ -27,6 +31,12 @@ function App(props) {
         path="/app/Posts"
         render={() => ContextHOC(Posts)}
       />
+      <Route
+        exact
+        path="/app/PostDetails"
+        render={() => ContextHOC(PostDetails)}
+      />
+      </div>
     </div>
   );
 }

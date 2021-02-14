@@ -10,6 +10,8 @@ class BlogContext extends React.Component {
             user : [],
             posts: [],
             selectedUserId: 0,
+            selectedPostId: 0,
+            searchTerm: '',
             setUser: (user) => {
                 this.setState({
                     user
@@ -22,6 +24,12 @@ class BlogContext extends React.Component {
             },
             setSelectedUserId: (id) => {
                 this.setState({selectedUserId: id})
+            },
+            setSelectedPostId: (id) => {
+                this.setState({selectedPostId: id})
+            },
+            setSearchTerm: (text) => {
+                   this.setState({searchTerm: text})
             }
         }
     }

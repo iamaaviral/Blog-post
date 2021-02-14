@@ -7,6 +7,10 @@ const Home = props => {
     return (
         <div className="user-container">
             {props.user.map((user) => {
+                let name = user.name.toUpperCase();
+                let company = user.company.name.toUpperCase();
+                if (name.includes(props.searchTerm.toUpperCase()) || company.includes(props.searchTerm.toUpperCase())) 
+                {
                 return (
                     <div className="each-user-wrapper hoverable"
                         key={user.id}
@@ -18,6 +22,7 @@ const Home = props => {
                             props.history.push('/app/Posts')
                         }}>view blog Posts</div>
                     </div>)
+                }
             })}
         </div>
     )

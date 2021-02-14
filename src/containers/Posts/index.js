@@ -9,19 +9,24 @@ const Posts = props => {
     }, [])
 
     return (
-    <div className="posts-container">
-        {props.posts.map((posts) => {
-            return (
-                <div className="each-posts-wrapper hoverable"
-                    key={posts.id}
-                >
-                    <div>{posts.title}</div>
-                    <div onClick={(e) => {
-                        props.history.push('/app/Posts')
-                    }}>view description</div>
-                </div>)
-        })}
-    </div>
+        <div className="posts-container">
+            {props.posts.map((post) => {
+            let search = post.title.toUpperCase();
+            if (search.includes(props.searchTerm.toUpperCase())) 
+                {
+                return (
+                    <div className="each-posts-wrapper hoverable"
+                        key={post.id}
+                    >
+                        <div>{post.title}</div>
+                        <div onClick={(e) => {
+                            props.setSelectedPostId(post.id)
+                            props.history.push('/app/PostDetails')
+                        }}>view description</div>
+                    </div>)
+                }
+            })}
+        </div>
     )
 }
 

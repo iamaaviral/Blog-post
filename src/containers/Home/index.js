@@ -8,14 +8,15 @@ const Home = props => {
         <div className="user-container">
             {props.user.map((user) => {
                 return (
-                    <div className="each-user-wrapper hoverable" 
-                    key={user.id}
-                    onClick={(e) => {
-                        props.history.push('/app/Posts')
-                        console.log(user.id)
-                    }}>
+                    <div className="each-user-wrapper hoverable"
+                        key={user.id}
+                    >
                         <div>{user.name}</div>
                         <div>{user.company.name}</div>
+                        <div onClick={(e) => {
+                            props.setSelectedUserId(user.id)
+                            props.history.push('/app/Posts')
+                        }}>view blog Posts</div>
                     </div>)
             })}
         </div>

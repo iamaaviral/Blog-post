@@ -8,10 +8,20 @@ class BlogContext extends React.Component {
         super(props)
         this.state = {
             user : [],
+            posts: [],
+            selectedUserId: 0,
             setUser: (user) => {
                 this.setState({
                     user
                 })
+            },
+            setUserPosts: (posts) => {
+                this.setState({
+                    posts
+                })
+            },
+            setSelectedUserId: (id) => {
+                this.setState({selectedUserId: id})
             }
         }
     }

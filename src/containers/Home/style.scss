@@ -1,8 +1,31 @@
 .user-container {
-    border: 1px solid red;
+    max-width: 70%;
+    margin: 0 auto;
     .each-user-wrapper {
         display: flex;
         justify-content: space-between;
-        border: 1px solid green;
+        align-items: center;
+        padding: 24px 0 34px 0 ;
+        border-top: 1px solid rgb(143, 142, 142);
+        border-bottom: 1px solid rgb(143, 142, 142);
+        .user-detail {
+            display: flex;
+            flex-direction: column;
+            .user-name {
+                font-size: 30px;
+            }
+            .user-company {
+                font-size: 16px;
+                opacity: 70%;
+            }
+        }
+        .view-blog {
+            font-weight: 400;
+            font-size: 16px;
+            border-radius: 4px;
+            padding: 7px 16px 9px;
+            background: rgb(15, 115, 12) none repeat scroll 0% 0%;
+            color: white;
+        }
     }
 }

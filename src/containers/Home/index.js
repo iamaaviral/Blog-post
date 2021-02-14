@@ -12,15 +12,19 @@ const Home = props => {
                 if (name.includes(props.searchTerm.toUpperCase()) || company.includes(props.searchTerm.toUpperCase())) 
                 {
                 return (
-                    <div className="each-user-wrapper hoverable"
+                    <div className="each-user-wrapper"
                         key={user.id}
                     >
-                        <div>{user.name}</div>
-                        <div>{user.company.name}</div>
-                        <div onClick={(e) => {
+                        <div className="user-detail">
+                            <div className="user-name">{user.name}</div>
+                            <div className="user-company">{user.company.name}</div>
+                        </div>
+                        <div title="view blog posts"
+                         className="view-blog hoverable"
+                            onClick={(e) => {
                             props.setSelectedUserId(user.id)
                             props.history.push('/app/Posts')
-                        }}>view blog Posts</div>
+                        }}>view Posts</div>
                     </div>)
                 }
             })}

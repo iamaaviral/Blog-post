@@ -9,7 +9,7 @@ const Header = props => {
         <div className="header-container">
             <div className="header-wrapper">
                 <div className="logo-section hoverable" onClick={() => {
-                     props.history.push('/')
+                     props.history.push('/Blog-post')
                 }}>
                     BLOG POST
                 </div>

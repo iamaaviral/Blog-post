@@ -24,17 +24,17 @@ function App(props) {
         <div className="body-content">
       <Route
         exact
-        path="/"
+        path="/Blog-post"
         render={() => ContextHOC(Home)}
       />
       <Route
         exact
-        path="/app/Posts"
+        path="/Blog-post/Posts"
         render={() => ContextHOC(Posts)}
       />
       <Route
         exact
-        path="/app/PostDetails"
+        path="/Blog-post/PostDetails"
         render={() => ContextHOC(PostDetails)}
       />
         </div>

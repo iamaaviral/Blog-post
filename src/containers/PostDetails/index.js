@@ -35,7 +35,7 @@ const PostDetails = props => {
             },
           }).then(response => response.json()).then(data => {
               console.log(data)
-              props.history.push('/app/Posts')
+              props.history.push('/Blog-post/Posts')
           })
     }
 

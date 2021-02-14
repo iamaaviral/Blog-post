@@ -23,7 +23,7 @@ const Home = props => {
                          className="view-btn hoverable"
                             onClick={(e) => {
                             props.setSelectedUserId(user.id)
-                            props.history.push('/app/Posts')
+                            props.history.push('/Blog-post/Posts')
                         }}>view Posts</div>
                     </div>)
                 }

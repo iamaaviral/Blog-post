@@ -1,5 +1,8 @@
 .pd-container {
     .pd-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         font-size: 46px;
         line-height: 56px;
         letter-spacing: -0.011em;

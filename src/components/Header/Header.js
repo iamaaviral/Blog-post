@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import LocalSearch from '../Search/Search';
 
 import './style.scss'
@@ -7,7 +8,9 @@ const Header = props => {
     return (
         <div className="header-container">
             <div className="header-wrapper">
-                <div className="logo-section">
+                <div className="logo-section hoverable" onClick={() => {
+                     props.history.push('/')
+                }}>
                     BLOG POST
                 </div>
                 <div className="content-section">
@@ -23,4 +26,4 @@ const Header = props => {
     )
 }
 
-export default Header;
+export default withRouter(Header);

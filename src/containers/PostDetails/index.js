@@ -1,7 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import up from '../../Image/up.svg'
-import down from '../../Image/down.svg'
+import up from '../../Image/up.svg';
+import trash from '../../Image/trash.svg';
+import down from '../../Image/down.svg';
 import Comments from '../Comments';
 
 import './style.scss'
@@ -23,11 +24,33 @@ const PostDetails = props => {
 
     const getComments = () => {
     setShowComment(!showComment)
-}
+    }
+
+    const deletePost = () => {
+        fetch(`https://jsonplaceholder.typicode.com/posts/${props.selectedPostId}`, {
+            method: 'DELETE',
+            credentials: 'include',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+          }).then(response => response.json()).then(data => {
+              console.log(data)
+              props.history.push('/app/Posts')
+          })
+    }
+
     return (
         <>
         <div className="pd-container">
-            <div className="pd-header">{post.title}</div>
+            <div className="pd-header">{post.title}
+             <img 
+                className="hoverable" 
+                height="20px" 
+                src={trash}  
+                alt="delete" 
+                title="Delete this post"
+                onClick={deletePost}/>
+             </div>
             <div className="pd-body">{post.body}</div>
             <div className="pd-comment hoverable"
                 onClick={

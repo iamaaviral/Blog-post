@@ -3,10 +3,10 @@ import './style.scss'
 
 const Comments = props => {
     return (
-        <div className="user-container">
+        <div className="comment-container">
             {props.comments.map((comment) => {
                 return (
-                    <div className="each-user-wrapper hoverable"
+                    <div className="each-comment-wrapper hoverable"
                         key={comment.id}
                     >
                         <div>{comment.body}</div>

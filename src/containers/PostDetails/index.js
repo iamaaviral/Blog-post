@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import up from '../../Image/up.svg'
+import down from '../../Image/down.svg'
 import Comments from '../Comments';
 
 import './style.scss'
@@ -25,11 +27,12 @@ const PostDetails = props => {
     return (
         <>
         <div className="pd-container">
-            <div>{post.title}</div>
-            <div>{post.body}</div>
-            <div onClick={
+            <div className="pd-header">{post.title}</div>
+            <div className="pd-body">{post.body}</div>
+            <div className="pd-comment hoverable"
+                onClick={
                 getComments
-            }>view Comments ({`${comments.length}`})</div>
+            }>View Comments ({`${comments.length}`}) <img src={showComment ? up : down} alt="show comments" height="16px"/></div>
         </div>
         {showComment ? <Comments comments={comments}/> : null}
         </>

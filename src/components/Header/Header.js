@@ -9,6 +9,7 @@ const Header = props => {
         <div className="header-container">
             <div className="header-wrapper">
                 <div className="logo-section hoverable" onClick={() => {
+                    props.setSearchTerm('')
                      props.history.push('/Blog-post')
                 }}>
                     BLOG POST
@@ -16,7 +17,8 @@ const Header = props => {
                 <div className="content-section">
                         <LocalSearch             
                             placeholder="Type to search"
-                            searchTerm={props.setSearchTerm}/>
+                            setSearchTerm={props.setSearchTerm}
+                            searchTerm={props.searchTerm}/>
                     <div className="name">
                         Aviral
                     </div>

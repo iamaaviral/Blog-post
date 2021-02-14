@@ -34,7 +34,7 @@ const PostDetails = props => {
               'Content-Type': 'application/json'
             },
           }).then(response => response.json()).then(data => {
-              console.log(data)
+              props.setSearchTerm('')
               props.history.push('/Blog-post/Posts')
           })
     }

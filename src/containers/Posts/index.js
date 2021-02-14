@@ -21,6 +21,7 @@ const Posts = props => {
                         <div className="post-title">{post.title}</div>
                         <div className="view-btn" onClick={(e) => {
                             props.setSelectedPostId(post.id)
+                            props.setSearchTerm('')
                             props.history.push('/Blog-post/PostDetails')
                         }}>Read this post</div>
                     </div>)

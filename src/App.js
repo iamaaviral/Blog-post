@@ -19,7 +19,7 @@ function App(props) {
 
   return (
     <div className="App">
-      <Header setSearchTerm={props.setSearchTerm}/>
+      <Header setSearchTerm={props.setSearchTerm} searchTerm={props.searchTerm}/>
       <div className="body">
         <div className="body-content">
       <Route

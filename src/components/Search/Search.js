@@ -3,18 +3,7 @@ import search from '../../Image/search-new.svg'
 import './Search.css';
 
 class LocalSearch extends Component {
-  constructor() {
-    super();
-    this.state = {
-      searchTerm: ''
-    };
-  }
-  handleSearch(term) {
-    this.setState({
-      searchTerm: term
-    });
-    this.props.searchTerm(term);
-  }
+
   render() {
     return (
       <div className="localSearch">
@@ -25,13 +14,13 @@ class LocalSearch extends Component {
             className="form-control"
             id="local-search"
             placeholder={this.props.placeholder}
-            value={this.state.searchTerm}
+            value={this.props.searchTerm}
             onClick={event => {
               event.stopPropagation();
             }}
             onChange={event => {
               event.stopPropagation();
-              this.handleSearch(event.target.value);
+              this.props.setSearchTerm(event.target.value);
             }}
           />
         </div>

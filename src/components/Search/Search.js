@@ -19,12 +19,8 @@ class LocalSearch extends Component {
     return (
       <div className="localSearch">
         <div className="input-group">
-          {/* <div className="input-group-addon">
-            <i className="fa fa-search"></i>
-          </div> */}
           <img src={search} alt="search" height="15px"/>
           <input
-            autoFocus={true}
             type="text"
             className="form-control"
             id="local-search"
